@@ -3,7 +3,9 @@ class ImageConstant {
   static String imagePath = 'assets/images';
 
   static String imgBrandLogo = '$imagePath/logo.png';
-  static String home = '$imagePath/hometop.png';
+  static String backgroundImage = '$imagePath/background_image.svg';
+  static String carrot = '$imagePath/carrot.svg';
+
   static String photo1 = '$imagePath/photo1.png';
   static String photo2 = '$imagePath/photo2.png';
   static String photo3 = '$imagePath/photo3.png';

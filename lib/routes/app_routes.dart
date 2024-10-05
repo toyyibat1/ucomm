@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ucomm/features/dashboard/dashboard_screen.dart';
 import 'package:ucomm/features/favorites/favorites_screen.dart';
 import 'package:ucomm/features/filters/filter_screen.dart';
 import 'package:ucomm/features/home/home_screen.dart';
@@ -8,9 +9,7 @@ import 'package:ucomm/features/order_accepted/order_accepted_screen.dart';
 import 'package:ucomm/features/product_detail/product_detail_screen.dart';
 import 'package:ucomm/features/search/search_screen.dart';
 import 'package:ucomm/features/sign_up/sign_up_screen.dart';
-
-import '../features/dashboard/dashboard_screen.dart';
-import '../presentation/splash/splash_screen.dart';
+import 'package:ucomm/features/splash/splash_screen.dart';
 
 class AppRoutes {
   static const String splashScreen = '/splash_screen';

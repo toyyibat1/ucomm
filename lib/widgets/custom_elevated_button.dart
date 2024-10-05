@@ -47,18 +47,18 @@ class CustomElevatedButton extends BaseButton {
   }
 
   Widget get buildElevatedButtonWidget => Container(
-        height: height ?? 40.h,
+        height: height ?? 66.h,
         width: width ?? double.maxFinite,
         margin: margin,
         decoration: decoration,
         child: ElevatedButton(
           style: buttonStyle ??
               ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(Colors.redAccent),
+                backgroundColor: MaterialStateProperty.all(Color(0XFF1A48FF)),
                 elevation: MaterialStateProperty.all(0),
                 shape: MaterialStateProperty.all(
                   RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8.0),
+                    borderRadius: BorderRadius.circular(24.0),
                   ),
                 ),
               ),
@@ -67,26 +67,18 @@ class CustomElevatedButton extends BaseButton {
               : showLoading != null && showLoading!
                   ? null
                   : onPressed ?? () {},
-          child: showLoading != null && showLoading!
-              ? SizedBox(
-                  height: 16,
-                  width: 16,
-                  child: CircularProgressIndicator(
-                    valueColor: AlwaysStoppedAnimation<Color>(Colors.red),
-                  ),
-                )
-              : Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    leftIcon ?? const SizedBox.shrink(),
-                    Text(
-                      text,
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    rightIcon ?? const SizedBox.shrink(),
-                  ],
-                ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              leftIcon ?? const SizedBox.shrink(),
+              Text(
+                text,
+                style: TextStyle(color: Colors.white),
+              ),
+              rightIcon ?? const SizedBox.shrink(),
+            ],
+          ),
         ),
       );
 }

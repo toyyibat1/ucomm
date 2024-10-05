@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ucomm/core/app_export.dart';
+import 'package:ucomm/theme/custom_text_style.dart';
+import 'package:ucomm/theme/theme_helper.dart';
 
 import 'notifier/splash_screen_notifier.dart';
 
@@ -20,28 +22,27 @@ class SplashScreen extends ConsumerWidget {
     // Check if the splash is done, and navigate to another screen
     if (splashState.isSplashDone) {
       Future.microtask(() async {
-        // Check if token exists in secure storage
-        final storage = ref.read(storageProvider);
-        final token = await storage.read(key: 'token');
-
-        if (token != null) {
-          // Navigate to dashboard if token exists
-          Navigator.pushReplacementNamed(context, AppRoutes.dashboard);
-        } else {
-          // Navigate to login if no token found
-          Navigator.pushReplacementNamed(context, AppRoutes.loginScreen);
-        }
+        Navigator.pushReplacementNamed(context, AppRoutes.loginScreen);
       });
     }
 
     return Scaffold(
+      backgroundColor: appTheme.black900DB,
       body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(40.0),
-          child: CustomImageView(
-            imagePath: ImageConstant.imgBrandLogo,
-            fit: BoxFit.cover,
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            CustomImageView(
+              imagePath: ImageConstant.imgBrandLogo,
+              fit: BoxFit.cover,
+            ),
+            const SizedBox(height: 32),
+            Text(
+              'The Best Online Store.',
+              style: CustomTextStyles.titleLargeABeeWhiteA70001,
+            )
+          ],
         ),
       ),
     );

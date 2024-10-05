@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ucomm/theme/theme_helper.dart';
 
 class CustomTextFormField extends StatelessWidget {
   final String? labelText;
@@ -95,42 +96,29 @@ class CustomTextFormField extends StatelessWidget {
         },
         readOnly: readOnly ?? false,
         textCapitalization: textCapitalization ?? TextCapitalization.none,
-        style: TextStyle(color: Colors.black),
+        style: const TextStyle(color: Colors.black),
         decoration: InputDecoration(
-          hintStyle: TextStyle(color: Colors.black26),
+          hintStyle: const TextStyle(color: Colors.black26),
           fillColor: filledColor,
-          contentPadding: contentPadding ?? EdgeInsets.all(11),
+          contentPadding: contentPadding ?? const EdgeInsets.all(11),
           errorMaxLines: 2,
           isDense: true,
           floatingLabelBehavior: FloatingLabelBehavior.never,
-          filled: filled ?? true,
           border: borderDecoration ??
-              OutlineInputBorder(
-                borderRadius: BorderRadius.circular(8),
-                borderSide: BorderSide(color: Colors.grey, width: 1),
+              UnderlineInputBorder(
+                borderSide: BorderSide(color: appTheme.gray300),
               ),
           enabledBorder: borderDecoration ??
-              OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10),
-                borderSide: BorderSide(color: Colors.grey, width: 1),
+              UnderlineInputBorder(
+                borderSide: BorderSide(color: appTheme.gray300),
               ),
           focusedBorder: borderDecoration ??
-              OutlineInputBorder(borderRadius: BorderRadius.circular(8))
-                  .copyWith(borderSide: BorderSide()),
-          errorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
-            borderSide: BorderSide(
-              color: Colors.red,
-              width: 1,
-            ),
-          ),
-          focusedErrorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
-            borderSide: BorderSide(
-              color: Colors.redAccent,
-              width: 1,
-            ),
-          ),
+              UnderlineInputBorder(
+                borderSide: BorderSide(
+                  color: theme.colorScheme.primary,
+                  width: 1,
+                ),
+              ),
           prefixIcon: prefixIcon,
           suffixIcon: suffixIcon,
           labelText: labelText,
@@ -144,31 +132,11 @@ class CustomTextFormField extends StatelessWidget {
 }
 
 extension TextFormFieldStyleHelper on CustomTextFormField {
-  static OutlineInputBorder get outlineGray => OutlineInputBorder(
-        borderRadius: BorderRadius.circular(6),
-        borderSide: BorderSide(
-          color: Colors.blueGrey.withOpacity(0.52),
-          width: 1,
-        ),
-      );
-  static OutlineInputBorder get outlineBlueGray => OutlineInputBorder(
+  static OutlineInputBorder get outlineGray =>
+      const OutlineInputBorder(borderSide: BorderSide.none);
+
+  static OutlineInputBorder get fillGray => OutlineInputBorder(
         borderRadius: BorderRadius.circular(8),
-        borderSide: BorderSide(
-          color: Colors.blueGrey,
-          width: 1,
-        ),
-      );
-  static OutlineInputBorder get fillWhiteA =>
-      OutlineInputBorder(borderSide: BorderSide.none);
-  static OutlineInputBorder get outlineBlack => OutlineInputBorder(
-        borderRadius: BorderRadius.circular(8),
-        borderSide: BorderSide(
-          color: Colors.black,
-          width: 1,
-        ),
-      );
-  static OutlineInputBorder get fillGreen => OutlineInputBorder(
-        borderRadius: BorderRadius.circular(8),
-        borderSide: BorderSide.none,
+        borderSide: BorderSide(color: appTheme.gray300, width: 1),
       );
 }

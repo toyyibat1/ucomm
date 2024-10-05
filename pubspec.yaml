@@ -49,7 +49,6 @@ flutter:
       fonts:
         - asset: assets/fonts/Monoton-Regular.ttf
           weight: 700
-
     - family: ABeeZee
       fonts:
         - asset: assets/fonts/ABeeZee-Regular.ttf
@@ -74,11 +73,11 @@ flutter:
           weight: 400
     - family: Aksara
       fonts:
-        - asset: assets/fonts/Aksara-regular.ttf
+        - asset: assets/fonts/Aksara-regular.otf
           weight: 600
     - family: Airbnb
       fonts:
-        - asset: assets/fonts/AirbnbCereal_W_Md.ttf
+        - asset: assets/fonts/AirbnbCereal_W_Md.otf
           weight: 500
     - family: Grotesk
       fonts:
