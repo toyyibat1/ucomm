@@ -22,14 +22,12 @@ class FilterScreen extends ConsumerWidget {
         centerTitle: true,
         automaticallyImplyLeading: false,
         backgroundColor: theme.colorScheme.primaryContainer,
-        actions: [
-          IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: Icon(Icons.close),
-          ),
-        ],
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(Icons.close),
+        ),
       ),
       body: Container(
         decoration: BoxDecoration(
