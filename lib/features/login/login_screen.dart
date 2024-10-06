@@ -21,14 +21,15 @@ class LoginScreen extends ConsumerWidget {
         width: double.maxFinite,
         child: Padding(
           padding: const EdgeInsets.all(16.0),
-          child: Column(
-            children: [
-              _buildImageSection(context),
-              SizedBox(height: 28.h),
-              _buildEmailPasswordSection(context),
-              SizedBox(height: 28.h),
-              _buildLoginSection(context),
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                _buildImageSection(context),
+                _buildEmailPasswordSection(context),
+                SizedBox(height: 28.h),
+                _buildLoginSection(context),
+              ],
+            ),
           ),
         ),
       ),
@@ -59,7 +60,7 @@ class LoginScreen extends ConsumerWidget {
                   width: 46.h,
                   alignment: Alignment.center,
                 ),
-                SizedBox(height: 96.h),
+                SizedBox(height: 40.h),
                 const Text(
                   "Loging",
                   style: TextStyle(
@@ -173,7 +174,6 @@ class LoginScreen extends ConsumerWidget {
                   height: 54.h,
                   width: 46.h,
                 ),
-                SizedBox(height: 96.h),
                 Container(
                   width: double.maxFinite,
                   decoration: BoxDecoration(

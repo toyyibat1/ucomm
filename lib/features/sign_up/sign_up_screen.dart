@@ -24,7 +24,6 @@ class SignUpScreen extends ConsumerWidget {
             child: Column(
               children: [
                 _buildImageSection(context),
-                SizedBox(height: 28.h),
                 _buildEmailPasswordSection(context),
                 SizedBox(height: 28.h),
                 _buildLoginSection(context),
@@ -60,7 +59,6 @@ class SignUpScreen extends ConsumerWidget {
                   width: 46.h,
                   alignment: Alignment.center,
                 ),
-                SizedBox(height: 96.h),
                 const Text(
                   "Sign Up",
                   style: TextStyle(
