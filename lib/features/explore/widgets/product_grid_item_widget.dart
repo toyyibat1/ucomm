@@ -16,10 +16,10 @@ class ProductGridItemWidget extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 24.h, vertical: 24),
       width: double.maxFinite,
       decoration: BoxDecoration(
-        color: theme.colorScheme.onErrorContainer.withOpacity(0.1),
+        color: productItemModel.color.withOpacity(0.1),
         borderRadius: BorderRadiusStyle.roundedBorder16,
         border: Border.all(
-          color: productItemModel.color,
+          color: appTheme.gray300,
           width: 1.h,
         ),
       ),

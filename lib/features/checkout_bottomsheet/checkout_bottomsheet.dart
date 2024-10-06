@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ucomm/core/app_export.dart';
+import 'package:ucomm/core/utils/navigator_service.dart';
 import 'package:ucomm/core/utils/size_utils.dart';
 import 'package:ucomm/theme/app_decoration.dart';
 import 'package:ucomm/theme/custom_text_style.dart';
@@ -13,23 +14,27 @@ class CheckoutBottomSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.maxFinite,
-      child: SingleChildScrollView(
-        child: Container(
-          decoration: BoxDecoration(
-              color: appTheme.gray100,
-              borderRadius: BorderRadiusStyle.roundedBorder16),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              _buildCheckoutHeader(context),
-              SizedBox(height: 28.h),
-              SizedBox(
-                child: Divider(),
-              ),
-              SizedBox(height: 16.h),
-              _buildOrderSummary(context),
-              SizedBox(height: 16.h),
-            ],
+      child: Container(
+        decoration: BoxDecoration(
+            color: appTheme.gray100,
+            borderRadius: BorderRadiusStyle.roundedBorder24),
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(height: 28.h),
+                _buildCheckoutHeader(context),
+                SizedBox(height: 28.h),
+                Divider(
+                  color: appTheme.gray300,
+                ),
+                SizedBox(height: 16.h),
+                _buildOrderSummary(context),
+                SizedBox(height: 16.h),
+              ],
+            ),
           ),
         ),
       ),
@@ -49,9 +54,15 @@ class CheckoutBottomSheet extends StatelessWidget {
                   "Checkout",
                   style: theme.textTheme.headlineSmall,
                 ),
-                Icon(
-                  Icons.close,
-                  size: 14,
+                Spacer(),
+                IconButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: Icon(
+                    Icons.close,
+                    size: 20,
+                  ),
                 )
               ],
             ),
@@ -74,6 +85,10 @@ class CheckoutBottomSheet extends StatelessWidget {
               false,
             ),
           ),
+          SizedBox(height: 12.h),
+          Divider(
+            color: appTheme.gray300,
+          ),
           SizedBox(
             width: double.maxFinite,
             child: _buildCheckSection(
@@ -84,6 +99,10 @@ class CheckoutBottomSheet extends StatelessWidget {
               iconText: Icon(Icons.card_travel_sharp),
             ),
           ),
+          SizedBox(height: 12.h),
+          Divider(
+            color: appTheme.gray300,
+          ),
           SizedBox(
             width: double.maxFinite,
             child: _buildCheckSection(
@@ -92,6 +111,10 @@ class CheckoutBottomSheet extends StatelessWidget {
               "Pick discount",
               false,
             ),
+          ),
+          SizedBox(height: 12.h),
+          Divider(
+            color: appTheme.gray300,
           ),
           SizedBox(
             width: double.maxFinite,
@@ -102,10 +125,20 @@ class CheckoutBottomSheet extends StatelessWidget {
               false,
             ),
           ),
+          SizedBox(height: 12.h),
+          Divider(
+            color: appTheme.gray300,
+          ),
           Text(
             "By placing an order you agree to our Terms And Conditions",
           ),
-          CustomElevatedButton(text: "Place Order")
+          SizedBox(height: 28.h),
+          CustomElevatedButton(
+            text: "Place Order",
+            onPressed: () {
+              NavigationService.popAndPushNamed(AppRoutes.orderAcceptedScreen);
+            },
+          )
         ],
       ),
     );
@@ -135,7 +168,8 @@ class CheckoutBottomSheet extends StatelessWidget {
               style: CustomTextStyles.titleMedium16,
             ),
           ),
-        Icon(Icons.arrow_forward_ios)
+        SizedBox(width: 12.h),
+        Icon(Icons.arrow_forward_ios, size: 14)
       ],
     );
   }

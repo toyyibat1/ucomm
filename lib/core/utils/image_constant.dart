@@ -25,6 +25,24 @@ class ImageConstant {
   static String bakery = '$imagePath/bakery.png';
   static String oil = '$imagePath/oil.png';
   static String ginger = '$imagePath/ginger.png';
+  static String profile = '$imagePath/profile.png';
+  static String about = '$imagePath/about.svg';
+  static String bell = '$imagePath/Bell.svg';
+  static String delivery = '$imagePath/Delivery.svg';
+  static String help = '$imagePath/help.svg';
+  static String details = '$imagePath/details.svg';
+  static String orders = '$imagePath/Orders.svg';
+  static String promo = '$imagePath/Promo.svg';
+  static String payment = '$imagePath/payment.svg';
+  static String coke = '$imagePath/coke.png';
+  static String coca = '$imagePath/coca.png';
+  static String pepsi = '$imagePath/pepsi.png';
+  static String juice = '$imagePath/juice.png';
+  static String sprite = '$imagePath/sprite.png';
+  static String filter = '$imagePath/filter.svg';
+  static String orderAccepted = '$imagePath/success.png';
+  static String orderFailed = '$imagePath/orderfailed.png';
+  static String share = '$imagePath/share.svg';
 
   static String photo1 = '$imagePath/photo1.png';
   static String photo2 = '$imagePath/photo2.png';

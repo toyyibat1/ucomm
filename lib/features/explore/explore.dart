@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_grid_list/responsive_grid_list.dart';
+import 'package:ucomm/core/app_export.dart';
+import 'package:ucomm/core/utils/navigator_service.dart';
 import 'package:ucomm/core/utils/size_utils.dart';
+import 'package:ucomm/features/explore/product_item_screen.dart';
 import 'package:ucomm/widgets/custom_search_view.dart';
 
 import 'model/product_item_model.dart';
@@ -45,8 +48,19 @@ class ExplorePage extends StatelessWidget {
       gridItems: List.generate(
         productItemModel.length,
         (index) {
-          return ProductGridItemWidget(
-            productItemModel: productItemModel[index],
+          return GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) =>
+                      ProductItemScreen(product: productItemModel[index]),
+                ),
+              );
+            },
+            child: ProductGridItemWidget(
+              productItemModel: productItemModel[index],
+            ),
           );
         },
       ),

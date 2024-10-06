@@ -64,7 +64,7 @@ class CustomSearchView extends StatelessWidget {
         style: CustomTextStyles.bodyLargeABeeZeeGray80001,
         decoration: InputDecoration(
           hintStyle: hintStyle ?? CustomTextStyles.titleSmallGilroy,
-          fillColor: filledColor ?? appTheme.blueGray50,
+          fillColor: filledColor ?? appTheme.gray20001,
           contentPadding: contentPadding ?? EdgeInsets.all(11.h),
           errorMaxLines: 2,
           isDense: true,
@@ -88,13 +88,14 @@ class CustomSearchView extends StatelessWidget {
                 Icons.search,
                 size: 16.h,
               ),
-          suffixIcon: suffixIcon ??
-              IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.clear,
-                    color: Colors.grey.shade600,
-                  )),
+          // suffixIcon: suffixIcon ??
+          //     IconButton(
+          //       onPressed: () {},
+          //       icon: Icon(
+          //         Icons.clear,
+          //         color: Colors.grey.shade600,
+          //       ),
+          //     ),
           hintText: hintText ?? "",
         ),
         onChanged: onChanged,

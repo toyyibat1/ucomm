@@ -12,5 +12,7 @@ class BorderRadiusStyle {
   static BorderRadius get roundedBorder10 => BorderRadius.circular(10.h);
   static BorderRadius get roundedBorder16 => BorderRadius.circular(16.h);
 
+  static BorderRadius get roundedBorder24 => BorderRadius.circular(24.h);
+
   static BorderRadius get roundedBorder124 => BorderRadius.circular(124.h);
 }

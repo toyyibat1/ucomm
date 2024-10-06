@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ucomm/features/dashboard/dashboard_screen.dart';
 import 'package:ucomm/features/explore/explore.dart';
+import 'package:ucomm/features/explore/product_item_screen.dart';
 import 'package:ucomm/features/favorites/favorites_screen.dart';
 import 'package:ucomm/features/filters/filter_screen.dart';
 import 'package:ucomm/features/home/home_screen.dart';
@@ -30,6 +31,7 @@ class AppRoutes {
   static const String accountPage = '/account_page';
   static const String appNavigationScreen = '/app_navigation_screen';
   static const String initialRoute = '/intialRoute';
+  static const String productItemScreen = '/productItemScreen';
 
   static Map<String, WidgetBuilder> get routes => {
         initialRoute: (context) => const SplashScreen(),
@@ -38,11 +40,11 @@ class AppRoutes {
         onboardingScreen: (context) => const OnboardingScreen(),
         dashboard: (context) => DashboardScreen(),
         //  homeScreen: (context) => const ShopScreen(),
-       // productDetailScreen: (context) =>  ProductDetailScreen(),
+        // productDetailScreen: (context) =>  ProductDetailScreen(),
         // explorePage: (context) => ExploreScreen(),
         //  beveragesScreen: (context) => HomeScreen(),
         searchScreen: (context) => const SearchScreen(),
-        filterScreen: (context) => const FilterScreen(),
+        // filterScreen: (context) => const FilterScreen(),
         //myCartPage: (context) => HomeScreen(),
         // favoritesPage: (context) => const FavoritesScreen(),
         orderAcceptedScreen: (context) => const OrderAcceptedScreen(),

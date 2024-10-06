@@ -11,53 +11,56 @@ class ErrorDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          width: double.maxFinite,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SizedBox(height: 40.h),
-              Container(
-                decoration: BoxDecoration(
-                    color: appTheme.whiteA70001,
-                    borderRadius: BorderRadiusStyle.roundedBorder16),
-                child: Column(
-                  children: [
-                    SizedBox(height: 40.h),
-                    CustomImageView(
-                      imagePath: ImageConstant.backgroundImage,
-                      height: 14.h,
-                      width: 14.h,
-                      onTap: () {},
-                    ),
-                    SizedBox(height: 18.h),
-                    CustomImageView(
-                      imagePath: ImageConstant.backgroundImage,
-                      height: 220.h,
-                      width: double.maxFinite,
-                      onTap: () {},
-                    ),
-                    SizedBox(height: 46.h),
-                    Text("Oops! Order Failed",
-                        style: theme.textTheme.headlineMedium),
-                    SizedBox(height: 16.h),
-                    Text("Something went tembly wrong.",
-                        style: theme.textTheme.bodyLarge),
-                    SizedBox(height: 60.h),
-                    CustomElevatedButton(
-                      text: "Please Try Again",
-                    ),
-                    SizedBox(height: 18.h),
-                    Text("Back to home", style: CustomTextStyles.titleMedium_1),
-                  ],
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Container(
+            decoration: BoxDecoration(
+                color: appTheme.whiteA70001,
+                borderRadius: BorderRadiusStyle.roundedBorder16),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Align(
+                  alignment: Alignment.topLeft,
+                  child: IconButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      icon: Icon(Icons.close)),
                 ),
-              ),
-            ],
-          ),
-        )
-      ],
+                SizedBox(height: 20.h),
+                CustomImageView(
+                  imagePath: ImageConstant.orderFailed,
+                  height: 222.h,
+                  width: 222.h,
+                  onTap: () {},
+                ),
+                SizedBox(height: 12.h),
+                Text("Oops! Order Failed",
+                    style: theme.textTheme.headlineMedium),
+                SizedBox(height: 16.h),
+                Text("Something went tembly wrong.",
+                    style: theme.textTheme.bodyLarge),
+                SizedBox(height: 40.h),
+                CustomElevatedButton(
+                  text: "Please Try Again",
+                ),
+                SizedBox(height: 18.h),
+                TextButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: Text("Back to home",
+                      style: CustomTextStyles.titleMedium_1),
+                )
+              ],
+            ),
+          )
+        ],
+      ),
     );
   }
 }

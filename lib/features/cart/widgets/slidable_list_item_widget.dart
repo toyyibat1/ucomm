@@ -12,99 +12,116 @@ class SlidableListItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Slidable(
-      startActionPane: ActionPane(
-        motion: ScrollMotion(),
-        extentRatio: 0.31,
-        dragDismissible: false,
-        children: [
-          Container(
-            child: Icon(
-              Icons.cancel_outlined,
-              size: 86,
-            ),
-          )
-        ],
-      ),
-      child: Row(
-        children: [
-          CustomImageView(
-            imagePath: cartItemModel.image,
-            height: 64.h,
-            width: 70.h,
-          ),
-          Expanded(
-              child: Row(
-            children: [
-              SizedBox(
-                width: 174.h,
-                child: Column(
-                  children: [
-                    Text(
-                      cartItemModel.title,
-                      style: theme.textTheme.bodyLarge,
-                    ),
-                    Text(
-                      cartItemModel.subtitle,
-                      style: theme.textTheme.bodyMedium,
-                    ),
-                    SizedBox(height: 10.h),
-                    Row(
-                      children: [
-                        GestureDetector(
-                          onTap: () {},
-                          child: SizedBox(
-                            height: 2.h,
-                            width: 16.h,
-                            child: Stack(
-                              alignment: Alignment.center,
-                              children: [
-                                Icon(
-                                  Icons.dashboard,
-                                  size: 2.h,
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                        Text("1"),
-                        GestureDetector(
-                          onTap: () {},
-                          child: SizedBox(
-                            height: 2.h,
-                            width: 16.h,
-                            child: Stack(
-                              alignment: Alignment.center,
-                              children: [
-                                Icon(
-                                  Icons.add,
-                                  size: 2.h,
-                                )
-                              ],
-                            ),
-                          ),
-                        )
-                      ],
-                    )
-                  ],
-                ),
-              )
-            ],
-          )),
-          Column(
-            children: [
-              Icon(
-                Icons.close,
-                size: 14.h,
+    return Padding(
+      padding: const EdgeInsets.only(left: 8.0, top: 12, bottom: 12),
+      child: Slidable(
+        startActionPane: ActionPane(
+          motion: const ScrollMotion(),
+          //  extentRatio: 0.31,
+          dragDismissible: false,
+          children: [
+            Container(
+              child: const Icon(
+                Icons.cancel_outlined,
+                size: 86,
               ),
-              SizedBox(height: 46.h),
-              Text(
-                cartItemModel.price,
-                style: theme.textTheme.titleMedium,
-              )
-            ],
-          )
-        ],
+            )
+          ],
+        ),
+        child: Row(
+          children: [
+            CustomImageView(
+              imagePath: cartItemModel.image,
+              height: 64.h,
+              width: 70.h,
+            ),
+            SizedBox(width: 20),
+            Expanded(
+                child: Row(
+              children: [
+                SizedBox(
+                  width: 174.h,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        cartItemModel.title,
+                        style: theme.textTheme.bodyLarge,
+                      ),
+                      Text(
+                        cartItemModel.subtitle,
+                        style: theme.textTheme.bodyMedium,
+                      ),
+                      SizedBox(height: 10.h),
+                      Row(
+                        children: [
+                          GestureDetector(
+                            onTap: () {
+                              // ref.read(itemQuantityProvider.notifier).decrease();
+                            },
+                            child: Container(
+                              width: 40,
+                              height: 40,
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                    color: appTheme.gray300, width: 1),
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child:
+                                  Icon(Icons.remove, color: appTheme.gray300),
+                            ),
+                          ),
+                          const SizedBox(width: 16),
+
+                          // Quantity display
+                          const Text(
+                            '1',
+                            style: const TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          const SizedBox(width: 16),
+
+                          // Plus button
+                          GestureDetector(
+                            onTap: () {
+                              // ref.read(itemQuantityProvider.notifier).increase();
+                            },
+                            child: Container(
+                              width: 40,
+                              height: 40,
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                    color: appTheme.gray300, width: 1),
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: Icon(Icons.add,
+                                  color: theme.colorScheme.primary),
+                            ),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                )
+              ],
+            )),
+            Column(
+              children: [
+                Icon(
+                  Icons.close,
+                  size: 18.h,
+                ),
+                SizedBox(height: 46.h),
+                Text(
+                  cartItemModel.price,
+                  style: theme.textTheme.titleMedium,
+                )
+              ],
+            )
+          ],
+        ),
       ),
     );
   }

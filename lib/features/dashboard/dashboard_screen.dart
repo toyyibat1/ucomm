@@ -47,7 +47,7 @@ class DashboardScreen extends ConsumerWidget {
         onTap: (index) {
           ref.read(dashboardProvider.notifier).setIndex(index);
         },
-        selectedItemColor: Color(0xFFDB3022),
+        selectedItemColor: Color(0XFF1A48FF),
         unselectedItemColor: Colors.grey,
         showUnselectedLabels: true,
         items: List.generate(
@@ -55,7 +55,7 @@ class DashboardScreen extends ConsumerWidget {
           (index) => BottomNavigationBarItem(
             icon: CustomImageView(
               svgPath: _iconList[index],
-              color: selectedIndex == index ? Colors.red : Colors.grey,
+              color: selectedIndex == index ? Color(0XFF1A48FF) : Colors.grey,
             ),
             label: _labels[index],
           ),

@@ -55,18 +55,6 @@ class ShopPage extends ConsumerWidget {
             ),
             _buildBestSellingColumn(context),
             SizedBox(height: 16.h),
-            SizedBox(
-              width: double.maxFinite,
-              child: Align(
-                alignment: Alignment.center,
-                child: _buildGroceriesColumn(
-                  context,
-                  groceries: "Groceries",
-                  seeall: "See all",
-                ),
-              ),
-            ),
-            SizedBox(height: 16.h),
           ],
         ),
       ),
@@ -78,18 +66,20 @@ class ShopPage extends ConsumerWidget {
       child: SizedBox(
         width: double.maxFinite,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CustomImageView(
               svgPath: ImageConstant.carrot,
               height: 30.h,
               width: 26.h,
             ),
-            SizedBox(height: 6.h),
+            SizedBox(height: 10.h),
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Icon(
-                  Icons.track_changes_outlined,
-                  size: 14,
+                  Icons.location_on,
+                  size: 18,
                 ),
                 SizedBox(width: 6.h),
                 Text(
@@ -172,7 +162,17 @@ class ShopPage extends ConsumerWidget {
             child: Wrap(
               direction: Axis.horizontal,
               children: List.generate(items.length, (index) {
-                return ListOrganicItemWidget(item: items[index]);
+                return InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              ProductDetailScreen(item: items[index]),
+                        ),
+                      );
+                    },
+                    child: ListOrganicItemWidget(item: items[index]));
               }),
             ),
           ),
@@ -188,10 +188,20 @@ class ShopPage extends ConsumerWidget {
         Text(
           groceries,
           style: TextStyle(
-              fontSize: 24, fontWeight: FontWeight.w400, fontFamily: 'Gilroy'),
+            fontSize: 24,
+            fontWeight: FontWeight.w400,
+            fontFamily: 'Gilroy',
+          ),
         ),
         Spacer(),
-        Text(seeall),
+        Text(
+          seeall,
+          style: TextStyle(
+            color: theme.colorScheme.primary,
+            fontSize: 16,
+            fontFamily: 'Gilroy',
+          ),
+        ),
       ],
     );
   }

@@ -28,7 +28,7 @@ class SliderItemWidget extends StatelessWidget {
               height: 198.h,
               width: double.maxFinite,
               alignment: Alignment.topCenter,
-              fit: BoxFit.fill,
+              fit: BoxFit.fitHeight,
             ),
           )
         ],

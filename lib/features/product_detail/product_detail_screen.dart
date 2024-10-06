@@ -1,7 +1,7 @@
-import 'package:carousel_slider_plus/carousel_slider_plus.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:ucomm/core/app_export.dart';
 import 'package:ucomm/core/utils/size_utils.dart';
 import 'package:ucomm/features/home/model/list_organic_item_model.dart';
 import 'package:ucomm/features/product_detail/widgets/product_details_item_widget.dart';
@@ -10,8 +10,8 @@ import 'package:ucomm/theme/custom_text_style.dart';
 import 'package:ucomm/theme/theme_helper.dart';
 import 'package:ucomm/widgets/custom_elevated_button.dart';
 import 'package:ucomm/widgets/custom_image_view.dart';
-import 'package:ucomm/widgets/custom_text_form_filed.dart';
 
+import 'widgets/nutrition_and_review_widget.dart';
 import 'widgets/slider_item_widget.dart';
 
 class ProductDetailScreen extends ConsumerWidget {
@@ -98,7 +98,9 @@ class ProductDetailScreen extends ConsumerWidget {
                     size: 18.h,
                   ),
                 ),
-                const Icon(Icons.share)
+                CustomImageView(
+                  svgPath: ImageConstant.share,
+                ),
               ],
             ),
             SizedBox(height: 24.h),
@@ -118,48 +120,39 @@ class ProductDetailScreen extends ConsumerWidget {
             children: [
               GestureDetector(
                 onTap: () {},
-                child: SizedBox(
-                  height: 2.h,
-                  width: 16.h,
-                  child: Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      Icon(
-                        Icons.remove,
-                        size: 17.h,
-                      )
-                    ],
+                child: Container(
+                  width: 40,
+                  height: 40,
+                  child: Icon(Icons.remove, color: appTheme.gray600),
+                ),
+              ),
+              const SizedBox(width: 8),
+              Container(
+                width: 40,
+                height: 40,
+                decoration: BoxDecoration(
+                  border: Border.all(color: appTheme.gray300, width: 1),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Center(
+                  child: Text(
+                    '1',
+                    style: const TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),
-              Align(
-                alignment: Alignment.center,
-                child: CustomTextFormField(
-                  // readOnly: true,
-                  width: 44.h,
-                  hintText: "1",
-
-                  hintStyle: CustomTextStyles.titleMedium_1,
-                  textInputAction: TextInputAction.done,
-                  borderDecoration: TextFormFieldStyleHelper.outlineGray,
-                ),
-              ),
+              const SizedBox(width: 8),
               GestureDetector(
                 onTap: () {},
-                child: SizedBox(
-                  height: 2.h,
-                  width: 16.h,
-                  child: Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      Icon(
-                        Icons.add,
-                        size: 17.h,
-                      )
-                    ],
-                  ),
+                child: Container(
+                  width: 40,
+                  height: 40,
+                  child: Icon(Icons.add, color: theme.colorScheme.primary),
                 ),
-              )
+              ),
             ],
           )),
           Text(
@@ -179,16 +172,36 @@ class ProductDetailScreen extends ConsumerWidget {
           item: item,
           onSelectedExpandableList: (value) {},
           isSelected: true,
+          title: "Product Detail",
         ),
-        ProductDetailsSectionItemWidget(
+        NutritionReviewWidget(
           item: item,
           onSelectedExpandableList: (value) {},
           isSelected: false,
+          title: "Nutrition",
+          widget: Container(
+            decoration: BoxDecoration(
+              color: appTheme.gray300,
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Text("100gr"),
+          ),
         ),
-        ProductDetailsSectionItemWidget(
+        NutritionReviewWidget(
           item: item,
           onSelectedExpandableList: (value) {},
           isSelected: false,
+          title: "Reviews",
+          widget: RatingBarIndicator(
+            rating: 5,
+            itemBuilder: (context, index) => Icon(
+              Icons.star,
+              color: Colors.amber,
+            ),
+            itemCount: 5,
+            itemSize: 20.0,
+            direction: Axis.horizontal,
+          ),
         ),
       ],
     ));

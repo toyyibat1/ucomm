@@ -12,10 +12,8 @@ class FavoritiesListItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 12),
+      padding: const EdgeInsets.all(16.0),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CustomImageView(
             imagePath: favoritiesItemModel.image,
@@ -23,16 +21,16 @@ class FavoritiesListItemWidget extends StatelessWidget {
             width: 30.h,
             alignment: Alignment.center,
           ),
+          SizedBox(width: 16.h),
           Expanded(
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   favoritiesItemModel.title,
                   style: theme.textTheme.bodyLarge,
                 ),
-                SizedBox(
-                  height: 4.h,
-                ),
+                SizedBox(height: 4.h),
                 Text(
                   favoritiesItemModel.subtitle,
                   style: theme.textTheme.bodyMedium,
@@ -44,9 +42,11 @@ class FavoritiesListItemWidget extends StatelessWidget {
             favoritiesItemModel.price,
             style: CustomTextStyles.titleMedium16_1,
           ),
+          SizedBox(width: 8.h),
           Icon(
             Icons.arrow_forward_ios,
-            size: 8.h,
+            size: 14.h,
+            color: appTheme.black,
           )
         ],
       ),

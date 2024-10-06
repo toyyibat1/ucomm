@@ -12,35 +12,35 @@ class AccountModel {
 
 List<AccountModel> accountModel = [
   AccountModel(
-    image: ImageConstant.onboarding,
+    image: ImageConstant.orders,
     title: "Orders",
   ),
   AccountModel(
-    image: ImageConstant.onboarding,
+    image: ImageConstant.details,
     title: "My Details",
   ),
   AccountModel(
-    image: ImageConstant.onboarding,
+    image: ImageConstant.delivery,
     title: "Delivery Address",
   ),
   AccountModel(
-    image: ImageConstant.onboarding,
+    image: ImageConstant.payment,
     title: "Payment Methods",
   ),
   AccountModel(
-    image: ImageConstant.onboarding,
+    image: ImageConstant.promo,
     title: "Promo Cord",
   ),
-    AccountModel(
-    image: ImageConstant.onboarding,
+  AccountModel(
+    image: ImageConstant.bell,
     title: "Notificatios",
   ),
-    AccountModel(
-    image: ImageConstant.onboarding,
+  AccountModel(
+    image: ImageConstant.help,
     title: "Help",
   ),
-    AccountModel(
-    image: ImageConstant.onboarding,
+  AccountModel(
+    image: ImageConstant.about,
     title: "About",
   ),
 ];

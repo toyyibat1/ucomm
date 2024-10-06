@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:ucomm/core/app_export.dart';
 import 'package:ucomm/core/utils/size_utils.dart';
 import 'package:ucomm/features/home/model/list_organic_item_model.dart';
 import 'package:ucomm/theme/app_decoration.dart';
 import 'package:ucomm/theme/theme_helper.dart';
-import 'package:ucomm/widgets/custom_icon_button.dart';
+import 'package:ucomm/widgets/custom_image_view.dart';
 
-class ListOrganicItemWidget extends StatelessWidget {
-  ListOrganicItemWidget({required this.item, super.key});
+class ProductGrid extends StatelessWidget {
+  ProductGrid({required this.item, super.key});
   ItemModel item;
 
   @override
@@ -28,11 +27,12 @@ class ListOrganicItemWidget extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           SizedBox(height: 10.h),
-          CustomImageView(
-            imagePath: item.image,
-            height: 78.h,
-            width: double.maxFinite,
-            margin: EdgeInsets.only(left: 18.h, right: 24.h),
+          Center(
+            child: CustomImageView(
+              imagePath: item.image,
+              height: 91.h,
+              width: 51.h,
+            ),
           ),
           SizedBox(height: 20.h),
           Text(
