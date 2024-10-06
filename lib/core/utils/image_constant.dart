@@ -5,6 +5,12 @@ class ImageConstant {
   static String imgBrandLogo = '$imagePath/logo.png';
   static String backgroundImage = '$imagePath/background_image.svg';
   static String carrot = '$imagePath/carrot.svg';
+  static String onboarding = '$imagePath/onboarding.png';
+  static String shop = '$imagePath/shop.svg';
+  static String explore = '$imagePath/explore.svg';
+  static String cart = '$imagePath/cart.svg';
+  static String favorite = '$imagePath/favorities.svg';
+  static String account = '$imagePath/account.svg';
 
   static String photo1 = '$imagePath/photo1.png';
   static String photo2 = '$imagePath/photo2.png';
