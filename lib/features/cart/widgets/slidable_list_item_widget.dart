@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:ucomm/core/app_export.dart';
@@ -15,16 +17,14 @@ class SlidableListItemWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(left: 8.0, top: 12, bottom: 12),
       child: Slidable(
-        startActionPane: ActionPane(
-          motion: const ScrollMotion(),
-          //  extentRatio: 0.31,
+        startActionPane: const ActionPane(
+          motion: ScrollMotion(),
+          extentRatio: 0.31,
           dragDismissible: false,
           children: [
-            Container(
-              child: const Icon(
-                Icons.cancel_outlined,
-                size: 86,
-              ),
+            Icon(
+              Icons.cancel_outlined,
+              size: 86,
             )
           ],
         ),
@@ -35,7 +35,7 @@ class SlidableListItemWidget extends StatelessWidget {
               height: 64.h,
               width: 70.h,
             ),
-            SizedBox(width: 20),
+            const SizedBox(width: 20),
             Expanded(
                 child: Row(
               children: [

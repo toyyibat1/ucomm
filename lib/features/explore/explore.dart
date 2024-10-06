@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_grid_list/responsive_grid_list.dart';
-import 'package:ucomm/core/app_export.dart';
-import 'package:ucomm/core/utils/navigator_service.dart';
 import 'package:ucomm/core/utils/size_utils.dart';
 import 'package:ucomm/features/explore/product_item_screen.dart';
 import 'package:ucomm/widgets/custom_search_view.dart';
@@ -18,7 +16,7 @@ class ExplorePage extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: Text("Find Products"),
+        title: const Text("Find Products"),
         centerTitle: true,
       ),
       body: Padding(
@@ -26,7 +24,7 @@ class ExplorePage extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(height: 12.h),
-            CustomSearchView(
+            const CustomSearchView(
               hintText: "Search Store",
             ),
             SizedBox(height: 10.h),
@@ -67,7 +65,7 @@ class ExplorePage extends StatelessWidget {
       builder: (context, items) => ListView(
         shrinkWrap: true,
         padding: EdgeInsets.zero,
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         children: items,
       ),
     ));

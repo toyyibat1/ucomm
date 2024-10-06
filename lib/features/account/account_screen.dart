@@ -107,7 +107,7 @@ class AccountPage extends StatelessWidget {
       padding: EdgeInsets.zero,
       shrinkWrap: true,
       itemCount: accountModel.length,
-      physics: NeverScrollableScrollPhysics(),
+      physics: const NeverScrollableScrollPhysics(),
       separatorBuilder: (context, index) {
         return Divider(height: 1.h, thickness: 1.h, color: appTheme.gray300);
       },
@@ -127,10 +127,10 @@ class AccountPage extends StatelessWidget {
       leftIcon: Icon(
         Icons.logout,
         size: 18.h,
-        color: Color.fromARGB(255, 109, 116, 145),
+        color: const Color.fromARGB(255, 109, 116, 145),
       ),
       buttonStyle: CustomButtonStyles.fillGray,
-      buttonTextStyle: TextStyle(color: Color(0xFF1A48FF)),
+      buttonTextStyle: const TextStyle(color: Color(0xFF1A48FF)),
     );
   }
 }

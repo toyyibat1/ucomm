@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:ucomm/core/utils/size_utils.dart';
 import 'package:ucomm/theme/custom_text_style.dart';
-import 'package:ucomm/theme/theme_helper.dart';
 
 class CustomCheckboxButton extends StatelessWidget {
   CustomCheckboxButton(

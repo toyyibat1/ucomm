@@ -1,9 +1,7 @@
 import 'package:carousel_slider_plus/carousel_slider_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:ucomm/core/app_export.dart';
-import 'package:ucomm/core/utils/navigator_service.dart';
 import 'package:ucomm/core/utils/size_utils.dart';
 import 'package:ucomm/features/home/model/list_organic_item_model.dart';
 import 'package:ucomm/features/product_detail/product_detail_screen.dart';
@@ -11,7 +9,6 @@ import 'package:ucomm/theme/custom_text_style.dart';
 import 'package:ucomm/theme/theme_helper.dart';
 import 'package:ucomm/widgets/custom_search_view.dart';
 
-import 'widgets/banner_item_widget.dart';
 import 'widgets/list_organic_item_widget.dart';
 
 class ShopPage extends ConsumerWidget {

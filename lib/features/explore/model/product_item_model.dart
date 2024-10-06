@@ -18,30 +18,30 @@ List<ProductItemModel> productItemModel = [
   ProductItemModel(
     image: ImageConstant.freshfruits,
     title: "Frash Fruits & Vegetable",
-    color: Color(0x53B1751A),
+    color: const Color(0x53B1751A),
   ),
   ProductItemModel(
     image: ImageConstant.oil,
     title: "Cooking Oil & Ghee",
-    color: Color(0xF8A44C1A),
+    color: const Color(0xF8A44C1A),
   ),
   ProductItemModel(
       image: ImageConstant.meat,
       title: "Meat & Fish",
-      color: Color(0xFFF7A593)),
+      color: const Color(0xFFF7A593)),
   ProductItemModel(
     image: ImageConstant.bakery,
     title: "Bakery & Snacks",
-    color: Color(0xFFD3B00E0),
+    color: const Color(0xFFD3B00E0),
   ),
   ProductItemModel(
     image: ImageConstant.diaryEggss,
     title: "Dairy & Eggs",
-    color: Color(0xFFFDE598),
+    color: const Color(0xFFFDE598),
   ),
   ProductItemModel(
     image: ImageConstant.beverages,
     title: "Beverages",
-    color: Color(0xFFB7DFF5),
+    color: const Color(0xFFB7DFF5),
   ),
 ];

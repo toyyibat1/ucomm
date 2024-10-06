@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -9,7 +11,6 @@ import 'package:ucomm/theme/app_decoration.dart';
 import 'package:ucomm/theme/custom_text_style.dart';
 import 'package:ucomm/theme/theme_helper.dart';
 import 'package:ucomm/widgets/custom_elevated_button.dart';
-import 'package:ucomm/widgets/custom_image_view.dart';
 
 import 'widgets/nutrition_and_review_widget.dart';
 import 'widgets/slider_item_widget.dart';
@@ -112,61 +113,58 @@ class ProductDetailScreen extends ConsumerWidget {
   }
 
   _buildPriceSection(BuildContext context) {
-    return Container(
-      child: Row(
-        children: [
-          Expanded(
-              child: Row(
-            children: [
-              GestureDetector(
-                onTap: () {},
-                child: Container(
-                  width: 40,
-                  height: 40,
-                  child: Icon(Icons.remove, color: appTheme.gray600),
-                ),
-              ),
-              const SizedBox(width: 8),
-              Container(
+    return Row(
+      children: [
+        Expanded(
+            child: Row(
+          children: [
+            GestureDetector(
+              onTap: () {},
+              child: SizedBox(
                 width: 40,
                 height: 40,
-                decoration: BoxDecoration(
-                  border: Border.all(color: appTheme.gray300, width: 1),
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Center(
-                  child: Text(
-                    '1',
-                    style: const TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
+                child: Icon(Icons.remove, color: appTheme.gray600),
+              ),
+            ),
+            const SizedBox(width: 8),
+            Container(
+              width: 40,
+              height: 40,
+              decoration: BoxDecoration(
+                border: Border.all(color: appTheme.gray300, width: 1),
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: const Center(
+                child: Text(
+                  '1',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
-              const SizedBox(width: 8),
-              GestureDetector(
-                onTap: () {},
-                child: Container(
-                  width: 40,
-                  height: 40,
-                  child: Icon(Icons.add, color: theme.colorScheme.primary),
-                ),
+            ),
+            const SizedBox(width: 8),
+            GestureDetector(
+              onTap: () {},
+              child: Container(
+                width: 40,
+                height: 40,
+                child: Icon(Icons.add, color: theme.colorScheme.primary),
               ),
-            ],
-          )),
-          Text(
-            item.price!,
-            style: CustomTextStyles.headlineSmallGilroyBold,
-          )
-        ],
-      ),
+            ),
+          ],
+        )),
+        Text(
+          item.price!,
+          style: CustomTextStyles.headlineSmallGilroyBold,
+        )
+      ],
     );
   }
 
   _buildProductDetailsSection(BuildContext context) {
-    return Container(
-        child: Column(
+    return Column(
       children: [
         ProductDetailsSectionItemWidget(
           item: item,
@@ -184,7 +182,7 @@ class ProductDetailScreen extends ConsumerWidget {
               color: appTheme.gray300,
               borderRadius: BorderRadius.circular(8),
             ),
-            child: Text("100gr"),
+            child: const Text("100gr"),
           ),
         ),
         NutritionReviewWidget(
@@ -194,7 +192,7 @@ class ProductDetailScreen extends ConsumerWidget {
           title: "Reviews",
           widget: RatingBarIndicator(
             rating: 5,
-            itemBuilder: (context, index) => Icon(
+            itemBuilder: (context, index) => const Icon(
               Icons.star,
               color: Colors.amber,
             ),
@@ -204,7 +202,7 @@ class ProductDetailScreen extends ConsumerWidget {
           ),
         ),
       ],
-    ));
+    );
   }
 
   _buildAddToBasketButton(BuildContext context) {

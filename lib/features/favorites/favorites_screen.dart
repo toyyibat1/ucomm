@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:ucomm/core/utils/navigator_service.dart';
 import 'package:ucomm/core/utils/size_utils.dart';
 import 'package:ucomm/features/error_dialog/error_dialog.dart';
-import 'package:ucomm/features/explore/model/product_item_model.dart';
-import 'package:ucomm/features/explore/product_item_screen.dart';
 import 'package:ucomm/theme/custom_text_style.dart';
 import 'package:ucomm/theme/theme_helper.dart';
 import 'package:ucomm/widgets/custom_elevated_button.dart';

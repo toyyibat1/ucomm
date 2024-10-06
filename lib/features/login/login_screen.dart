@@ -60,7 +60,7 @@ class LoginScreen extends ConsumerWidget {
                   alignment: Alignment.center,
                 ),
                 SizedBox(height: 96.h),
-                Text(
+                const Text(
                   "Loging",
                   style: TextStyle(
                     fontSize: 26,
@@ -126,7 +126,7 @@ class LoginScreen extends ConsumerWidget {
                 suffixIcon: InkWell(
                   onTap: () {},
                   child: Container(
-                    margin: EdgeInsets.fromLTRB(16, 8, 2, 8),
+                    margin: const EdgeInsets.fromLTRB(16, 8, 2, 8),
                     child: Icon(
                       Icons.visibility,
                       size: 18.h,

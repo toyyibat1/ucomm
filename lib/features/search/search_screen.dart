@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:responsive_grid_list/responsive_grid_list.dart';
 import 'package:ucomm/core/utils/size_utils.dart';
 import 'package:ucomm/features/explore/model/product_item_model.dart';
@@ -17,15 +16,15 @@ class SearchScreen extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         leadingWidth: 324.h,
-        leading: Icon(Icons.arrow_back_ios),
-        title: CustomSearchView(
+        leading: const Icon(Icons.arrow_back_ios),
+        title: const CustomSearchView(
           hintText: "Egg",
         ),
         centerTitle: true,
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.shuffle),
+            icon: const Icon(Icons.shuffle),
           ),
         ],
       ),
@@ -57,7 +56,7 @@ class SearchScreen extends StatelessWidget {
         builder: (context, items) => ListView(
           shrinkWrap: true,
           padding: EdgeInsets.zero,
-          physics: BouncingScrollPhysics(),
+          physics: const BouncingScrollPhysics(),
           children: items,
         ),
       ),

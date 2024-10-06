@@ -28,7 +28,7 @@ class OnboardingScreen extends ConsumerWidget {
                 ),
                 fit: BoxFit.fill)),
         child: Column(
-          children: [Spacer(), _buildSettingSection(context)],
+          children: [const Spacer(), _buildSettingSection(context)],
         ),
       ),
     );
@@ -39,8 +39,8 @@ class OnboardingScreen extends ConsumerWidget {
       padding: EdgeInsets.only(left: 30.h, top: 30.h, right: 30.h),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          begin: Alignment(0.5, 0),
-          end: Alignment(0.5, 1),
+          begin: const Alignment(0.5, 0),
+          end: const Alignment(0.5, 1),
           colors: [appTheme.gray90000, appTheme.gray600],
         ),
       ),

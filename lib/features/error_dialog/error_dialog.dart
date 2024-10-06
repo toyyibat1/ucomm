@@ -29,7 +29,7 @@ class ErrorDialog extends StatelessWidget {
                       onPressed: () {
                         Navigator.pop(context);
                       },
-                      icon: Icon(Icons.close)),
+                      icon: const Icon(Icons.close)),
                 ),
                 SizedBox(height: 20.h),
                 CustomImageView(
@@ -45,7 +45,7 @@ class ErrorDialog extends StatelessWidget {
                 Text("Something went tembly wrong.",
                     style: theme.textTheme.bodyLarge),
                 SizedBox(height: 40.h),
-                CustomElevatedButton(
+                const CustomElevatedButton(
                   text: "Please Try Again",
                 ),
                 SizedBox(height: 18.h),

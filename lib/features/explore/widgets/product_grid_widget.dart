@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:ucomm/core/utils/size_utils.dart';
 import 'package:ucomm/features/home/model/list_organic_item_model.dart';

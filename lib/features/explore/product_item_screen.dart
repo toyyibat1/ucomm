@@ -10,8 +10,6 @@ import 'package:ucomm/features/filters/filter_screen.dart';
 import 'package:ucomm/features/home/model/list_organic_item_model.dart';
 import 'package:ucomm/features/product_detail/product_detail_screen.dart';
 
-import '../home/widgets/list_organic_item_widget.dart';
-
 class ProductItemScreen extends StatelessWidget {
   ProductItemScreen({super.key, required this.product});
 

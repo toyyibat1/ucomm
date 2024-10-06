@@ -42,7 +42,7 @@ class CheckoutBottomSheet extends StatelessWidget {
   }
 
   _buildCheckoutHeader(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: double.maxFinite,
       child: Column(
         children: [
@@ -54,12 +54,12 @@ class CheckoutBottomSheet extends StatelessWidget {
                   "Checkout",
                   style: theme.textTheme.headlineSmall,
                 ),
-                Spacer(),
+                const Spacer(),
                 IconButton(
                   onPressed: () {
                     Navigator.pop(context);
                   },
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.close,
                     size: 20,
                   ),
@@ -96,7 +96,7 @@ class CheckoutBottomSheet extends StatelessWidget {
               "Pament",
               "",
               true,
-              iconText: Icon(Icons.card_travel_sharp),
+              iconText: const Icon(Icons.card_travel_sharp),
             ),
           ),
           SizedBox(height: 12.h),
@@ -129,7 +129,7 @@ class CheckoutBottomSheet extends StatelessWidget {
           Divider(
             color: appTheme.gray300,
           ),
-          Text(
+          const Text(
             "By placing an order you agree to our Terms And Conditions",
           ),
           SizedBox(height: 28.h),
@@ -157,7 +157,7 @@ class CheckoutBottomSheet extends StatelessWidget {
           title,
           style: CustomTextStyles.titleMediumGray60001,
         ),
-        Spacer(),
+        const Spacer(),
         if (hasIcon)
           iconText!
         else
@@ -169,7 +169,7 @@ class CheckoutBottomSheet extends StatelessWidget {
             ),
           ),
         SizedBox(width: 12.h),
-        Icon(Icons.arrow_forward_ios, size: 14)
+        const Icon(Icons.arrow_forward_ios, size: 14)
       ],
     );
   }

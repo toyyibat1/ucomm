@@ -16,14 +16,14 @@ class OrderAcceptedScreen extends ConsumerWidget {
         body: SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Container(
+        child: SizedBox(
           height: SizeUtils.height,
           child: Stack(
             alignment: Alignment.bottomCenter,
             children: [
               Align(
                 alignment: Alignment.center,
-                child: Container(
+                child: SizedBox(
                   height: 600.h,
                   child: Stack(
                     alignment: Alignment.center,
@@ -46,7 +46,7 @@ class OrderAcceptedScreen extends ConsumerWidget {
                   ),
                 ),
               ),
-              Container(
+              SizedBox(
                 height: 458.h,
                 child: Stack(
                   children: [
@@ -99,7 +99,7 @@ class OrderAcceptedScreen extends ConsumerWidget {
   }
 
   _buildImageColumn(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: double.maxFinite,
       child: Column(
         children: [
