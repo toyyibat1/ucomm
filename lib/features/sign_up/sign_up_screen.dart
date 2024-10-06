@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ucomm/core/app_export.dart';
@@ -19,14 +20,16 @@ class SignUpScreen extends ConsumerWidget {
         width: double.maxFinite,
         child: Padding(
           padding: const EdgeInsets.all(16.0),
-          child: Column(
-            children: [
-              _buildImageSection(context),
-              SizedBox(height: 28.h),
-              _buildEmailPasswordSection(context),
-              SizedBox(height: 28.h),
-              _buildLoginSection(context),
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                _buildImageSection(context),
+                SizedBox(height: 28.h),
+                _buildEmailPasswordSection(context),
+                SizedBox(height: 28.h),
+                _buildLoginSection(context),
+              ],
+            ),
           ),
         ),
       ),
@@ -58,9 +61,12 @@ class SignUpScreen extends ConsumerWidget {
                   alignment: Alignment.center,
                 ),
                 SizedBox(height: 96.h),
-                Text(
+                const Text(
                   "Sign Up",
-                  style: CustomTextStyles.headlineMedium26,
+                  style: TextStyle(
+                    fontSize: 26,
+                    fontFamily: 'Gilroy',
+                  ),
                 ),
                 SizedBox(height: 6.h),
                 Text(
@@ -85,7 +91,7 @@ class SignUpScreen extends ConsumerWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Usernmae",
+                "Username",
                 style: CustomTextStyles.titleMediumGray6000116,
               ),
               SizedBox(height: 16.h),
@@ -142,11 +148,12 @@ class SignUpScreen extends ConsumerWidget {
               ),
               SizedBox(height: 6.h),
               CustomTextFormField(
+                hintText: "*****",
                 contentPadding: EdgeInsets.all(12.h),
                 suffixIcon: InkWell(
                   onTap: () {},
                   child: Container(
-                    margin: EdgeInsets.fromLTRB(16, 8, 2, 8),
+                    margin: const EdgeInsets.fromLTRB(16, 8, 2, 8),
                     child: Icon(
                       Icons.visibility,
                       size: 18.h,
@@ -154,9 +161,6 @@ class SignUpScreen extends ConsumerWidget {
                   ),
                 ),
                 obscureText: true,
-                // borderDecoration: TextFormFieldStyleHelper.fillGray,
-                // filled: true,
-                // filledColor: appTheme.gray300,
               )
             ],
           ),
@@ -215,7 +219,6 @@ class SignUpScreen extends ConsumerWidget {
                   height: 54.h,
                   width: 46.h,
                 ),
-                SizedBox(height: 96.h),
                 Container(
                   width: double.maxFinite,
                   decoration: BoxDecoration(
@@ -231,8 +234,14 @@ class SignUpScreen extends ConsumerWidget {
                                 style: CustomTextStyles
                                     .titleSmallGilroyGray900SemiBold),
                             TextSpan(
-                                text: "Log in",
-                                style: CustomTextStyles.titleSmallGilroyPrimary)
+                              text: "Log in",
+                              style: CustomTextStyles.titleSmallGilroyPrimary,
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () {
+                                  Navigator.pushReplacementNamed(
+                                      context, AppRoutes.loginScreen);
+                                },
+                            )
                           ],
                         ),
                         textAlign: TextAlign.left,
@@ -252,9 +261,9 @@ class SignUpScreen extends ConsumerWidget {
                   child: Align(
                     alignment: Alignment.topCenter,
                     child: Container(
-                      child: Row(
+                      child: const Row(
                         children: [
-                          Expanded(child: CustomElevatedButton(text: "Log in"))
+                          Expanded(child: CustomElevatedButton(text: "Sign up"))
                         ],
                       ),
                     ),

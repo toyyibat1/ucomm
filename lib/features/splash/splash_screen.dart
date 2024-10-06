@@ -22,7 +22,7 @@ class SplashScreen extends ConsumerWidget {
     // Check if the splash is done, and navigate to another screen
     if (splashState.isSplashDone) {
       Future.microtask(() async {
-        Navigator.pushReplacementNamed(context, AppRoutes.loginScreen);
+        Navigator.pushReplacementNamed(context, AppRoutes.onboardingScreen);
       });
     }
 

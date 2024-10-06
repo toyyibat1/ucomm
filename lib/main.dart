@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ucomm/core/app_export.dart';
+import 'package:ucomm/core/utils/navigator_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       debugShowMaterialGrid: false,
       title: 'Ucommerce',
+      navigatorKey: NavigationService.navigatorKey,
       localizationsDelegates: [],
       supportedLocales: const [Locale('en', '')],
       initialRoute: AppRoutes.initialRoute,

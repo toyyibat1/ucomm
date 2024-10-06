@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ucomm/core/app_export.dart';
+import 'package:ucomm/core/utils/navigator_service.dart';
 import 'package:ucomm/core/utils/size_utils.dart';
 import 'package:ucomm/core/utils/validation_functions.dart';
 import 'package:ucomm/theme/custom_text_style.dart';
@@ -61,7 +62,10 @@ class LoginScreen extends ConsumerWidget {
                 SizedBox(height: 96.h),
                 Text(
                   "Loging",
-                  style: CustomTextStyles.headlineMedium26,
+                  style: TextStyle(
+                    fontSize: 26,
+                    fontFamily: 'Gilroy',
+                  ),
                 ),
                 SizedBox(height: 6.h),
                 Text(
@@ -117,6 +121,7 @@ class LoginScreen extends ConsumerWidget {
               ),
               SizedBox(height: 6.h),
               CustomTextFormField(
+                hintText: "*****",
                 contentPadding: EdgeInsets.all(12.h),
                 suffixIcon: InkWell(
                   onTap: () {},
@@ -129,9 +134,6 @@ class LoginScreen extends ConsumerWidget {
                   ),
                 ),
                 obscureText: true,
-                // borderDecoration: TextFormFieldStyleHelper.fillGray,
-                // filled: true,
-                // filledColor: appTheme.gray300,
               )
             ],
           ),
@@ -183,12 +185,18 @@ class LoginScreen extends ConsumerWidget {
                         text: TextSpan(
                           children: [
                             TextSpan(
-                                text: "Don't have an Account? ",
+                                text: "Don't have an account? ",
                                 style: CustomTextStyles
                                     .titleSmallGilroyGray900SemiBold),
                             TextSpan(
-                                text: "Sign up",
-                                style: CustomTextStyles.titleSmallGilroyPrimary)
+                              text: "Sign up",
+                              style: CustomTextStyles.titleSmallGilroyPrimary,
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () {
+                                  Navigator.pushReplacementNamed(
+                                      context, AppRoutes.signupScreen);
+                                },
+                            )
                           ],
                         ),
                         textAlign: TextAlign.left,
@@ -199,8 +207,6 @@ class LoginScreen extends ConsumerWidget {
               ],
             ),
           ),
-             //     Navigator.pushReplacementNamed(context, AppRoutes.loginScreen);
-
           Align(
             alignment: Alignment.topCenter,
             child: Column(
@@ -212,7 +218,13 @@ class LoginScreen extends ConsumerWidget {
                     child: Container(
                       child: Row(
                         children: [
-                          Expanded(child: CustomElevatedButton(text: "Log in"))
+                          Expanded(
+                              child: CustomElevatedButton(
+                            text: "Log in",
+                            onPressed: () {
+                              NavigationService.pushNamed(AppRoutes.dashboard);
+                            },
+                          ))
                         ],
                       ),
                     ),

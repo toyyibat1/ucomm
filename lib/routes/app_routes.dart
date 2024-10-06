@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ucomm/features/dashboard/dashboard_screen.dart';
+import 'package:ucomm/features/explore/explore.dart';
 import 'package:ucomm/features/favorites/favorites_screen.dart';
 import 'package:ucomm/features/filters/filter_screen.dart';
 import 'package:ucomm/features/home/home_screen.dart';
@@ -35,18 +36,18 @@ class AppRoutes {
         loginScreen: (context) => const LoginScreen(),
         signupScreen: (context) => const SignUpScreen(),
         onboardingScreen: (context) => const OnboardingScreen(),
-        dashboard: (context) => const DashboardScreen(),
-        homeScreen: (context) => const HomeScreen(),
-        productDetailScreen: (context) => const ProductDetailScreen(),
-      //  explorePage: (context) => HomeScreen(),
-      //  beveragesScreen: (context) => HomeScreen(),
+        dashboard: (context) => DashboardScreen(),
+        //  homeScreen: (context) => const ShopScreen(),
+       // productDetailScreen: (context) =>  ProductDetailScreen(),
+        // explorePage: (context) => ExploreScreen(),
+        //  beveragesScreen: (context) => HomeScreen(),
         searchScreen: (context) => const SearchScreen(),
         filterScreen: (context) => const FilterScreen(),
         //myCartPage: (context) => HomeScreen(),
-        favoritesPage: (context) => const FavoritesScreen(),
+        // favoritesPage: (context) => const FavoritesScreen(),
         orderAcceptedScreen: (context) => const OrderAcceptedScreen(),
-       // accountPage: (context) => HomeScreen(),
-       // appNavigationScreen: (context) => HomeScreen(),
+        // accountPage: (context) => HomeScreen(),
+        // appNavigationScreen: (context) => HomeScreen(),
         splashScreen: (context) => const SplashScreen(),
       };
 }
